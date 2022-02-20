@@ -1,50 +1,40 @@
-import {useState, useEffect} from 'react'
+import {useState} from 'react'
 
-function ItemCount ({stock, initial}) {
+function ItemCount ({stock = 1, initial = 1, onAdd}) {
 
-    const [count, setCount] = useState (0)
+    const [quantity, setQuantity] = useState (initial)
 
-    useEffect(() => {
-        setCount(parseInt(initial))
-        return () => {
-            console.log('me voy a desmontar')
-            setCount(0)
-        }
-      }, [])
     
-    console.log('voy a renderizar');
-
-    const decrement = () => {
-        if(count > 0) {
-            setCount(count - 1)
-        }
-    }
 
     const increment = () => {
-        setCount(count + 1)
-    }
-
-    const onAdd  = () => {
-
-        if(count <= stock) {
-            alert('productos agregados al carrito: ' + count)
-            setCount(0)
-        }else {
-            alert ('no hay suficiente stock')
-            setCount(0)
+        if(quantity < stock) {
+            setQuantity(quantity + 1)
         }
-
     }
 
+    const decrement = () => {
+        if(quantity > 0) {
+            setQuantity(quantity - 1)
+        }
+    }
 
+   
     return (
-        <>
-        <h3>Seleccione cantidad de productos para agregar</h3>
-        <h3>{count}</h3>
-        <button onClick={decrement}>-</button>
-        <button onClick={increment}>+</button>
-        <button onClick={onAdd}>Agregar al Carrito</button>
-        </>
+       <div align="center">
+           <table>
+               <tbody>
+                   <tr>
+                       <td align="left"><button className="option" onClick={()=> decrement()}>-</button></td>
+                       <td align="center" style={{fontsize : '20px'}}>{quantity}</td>
+                       <td align="right"><button className="Option" onClick={()=> increment()}>+</button></td>
+                   </tr>
+                   <tr>
+                       <td align="center" colSpan="5"><button className="Option" onClick={()=>onAdd(quantity)}>Agregar al carro</button></td>
+                   </tr>
+               </tbody>
+           </table>
+
+       </div>
     )
 
 }

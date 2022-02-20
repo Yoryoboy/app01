@@ -1,8 +1,7 @@
 import {useState} from 'react'
 import './App.css';
 import NavBar from './components/navbar/NavBar';
-import ItemCount from './components/ItemCount/ItemCount';
-import ItemListContainer from './components/navbar/ItemListContainer/ItemListContainer';
+import ItemListContainer from './components/ItemListContainer/ItemListContainer';
 
 
 
@@ -14,9 +13,9 @@ function App() {
 
   return (
     <div className="App">
-      <NavBar title="Todo-Tecnologia" />
+      <NavBar title="E-commerce" />
       {/* <ItemListContainer label='HOLA MUNDO'/> */}
-      <ItemCount stock="5" initial="1" /> 
+      <ItemListContainer /> 
 
     </div>
 
