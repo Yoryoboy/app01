@@ -2,7 +2,7 @@ import 'bootstrap/dist/css/bootstrap.css'
 import Button from './button/button'
 import CartWidget from './CartWidget/CartWidget'
 
-const NavBar = ({title}) => {
+const NavBar = ({routing}) => {
 
     const handleCelular = () => {
         console.log('Celular')
@@ -31,9 +31,9 @@ const NavBar = ({title}) => {
 
     return (
         <div>
-            <h1>{title}</h1>
+            <h1>Ecommerce</h1>
         <nav className="bg-dark bg-gradient">
-            <ul className="nav nav-pills nav-fill">
+            <ul className="nav nav-pills nav-fill" onClick={() => routing({ path: 'list', id: 1})}>
                 <li className="nav-item"><a><Button label='Celulares' handleClick={handleCelular} /></a></li>
                 <li className="nav-item"><a><Button label='Desktops' handleClick={handleDesktops} /></a></li> 
                 <li className="nav-item"><a><Button label='Laptops' handleClick={handleLaptops}/></a></li>

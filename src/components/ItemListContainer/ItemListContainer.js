@@ -4,14 +4,19 @@ import { getProducts } from "../asyncmock"
 import ItemList from "./ItemList"
 
 
-const ItemListContainer = ({greeting = 'Hello'}) => {
+const ItemListContainer = ({ routing }) => {
     const [products, setProducts] = useState([])
 
     useEffect(() => {
 
         getProducts().then(products => {
-            console.log(products)
             setProducts(products)
+        }).catch(err => {
+            console.log(err)
+        })
+
+        return (() => {
+        setProducts()
         })
 
     }, [])
@@ -24,8 +29,7 @@ const ItemListContainer = ({greeting = 'Hello'}) => {
 
     return (
         <div className="ItemListContainer">
-            <h1>{greeting}</h1>
-            <ItemList products={products} />
+            <ItemList products={products} routing={routing} />
             {/* <ItemCount stock={10} initial={2} onAdd={handleOnAdd}/> */}
         </div>
     )
