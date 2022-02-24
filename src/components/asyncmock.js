@@ -25,3 +25,13 @@ export const getProduct = (id) => {
     })
 }
 
+export const getProductByCategory = (id) => {
+    return new Promise ((resolve) => {
+        const prods = products.filter(p => p.id === parseInt(id))
+        setTimeout(() => {
+            resolve(prods)
+
+        }, 1000)
+    })
+}
+
