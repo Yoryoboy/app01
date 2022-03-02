@@ -7,35 +7,37 @@ import { useParams } from "react-router-dom"
 
 const ItemListContainer = () => {
     const [products, setProducts] = useState([])
+    const [loading, setLoading] = useState(true)
     const { categoryId } = useParams()
-
-
+     
     useEffect(() => {
+        setLoading(true)
 
-        getProducts(categoryId).then(products => {
-            setProducts(products)
-        }).catch(err => {
+        getProducts(categoryId).then(item => {
+            setProducts(item)
+        }).catch(err  => {
             console.log(err)
+        }).finally(() => {
+            setLoading(false)
         })
 
         return (() => {
-        setProducts()
-        })
-
+            setProducts()
+        })          
     }, [categoryId])
-
-    const handleOnAdd = (quantity) => {
-        console.log(`Se agregaron ${quantity} productos`)
-    }
-
-    console.log(products)
-
+    
     return (
         <div className="ItemListContainer">
-            <ItemList products={products} />
-            {/* <ItemCount stock={10} initial={2} onAdd={handleOnAdd}/> */}
+            {
+                loading ? 
+                    <h1></h1> :  
+                products.length ? 
+                    <ItemList products={products}/> : 
+                    <h1>No se encontraron productos!</h1>
+            }
         </div>
-    )
+    )    
+ 
 }
 
 export default ItemListContainer
