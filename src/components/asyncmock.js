@@ -14,7 +14,7 @@ const products = [
     price: 'USD 800', 
     category: 'celular', 
     img:'https://images.samsung.com/is/image/samsung/p6pim/ar/galaxy-s21/gallery/ar-galaxy-s21-5g-g991-sm-g991bzalaro-thumb-368338803', 
-    stock: 16, 
+    stock: 25, 
     description: 'Desc Samsung'},
 
     {id: 3, 
@@ -22,7 +22,7 @@ const products = [
     price: 'USD 1200', 
     category: 'tablet', 
     img:'https://asset.conrad.com/media10/isa/160267/c1/-/en/002302222PI00/image.jpg', 
-    stock: 20, 
+    stock: 25, 
     description: 'Desc Ipad'},
 
     {id: 4, 
@@ -30,7 +30,7 @@ const products = [
     price: 'USD 1200', 
     category: 'desktop', 
     img:'https://ssl-product-images.www8-hp.com/digmedialib/prodimg/lowres/c07762843.png', 
-    stock: 20, 
+    stock: 25, 
     description: 'Desc Desktop'},
 
     {id: 5, 
@@ -38,7 +38,7 @@ const products = [
     price: 'USD 1200', 
     category: 'laptop', 
     img:'https://www.hp.com/us-en/shop/app/assets/images/product/2Y0V1AV_1/center_facing.png', 
-    stock: 20, 
+    stock: 25, 
     description: 'Desc Laptop'}
 
 ]
