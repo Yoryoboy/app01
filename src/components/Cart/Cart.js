@@ -4,7 +4,7 @@ import { CartContext } from "../../context/CartContext";
 const Cart = () => {
     const {cart, removeProd, cartTotal} = useContext(CartContext)
 
-    if(cart.lenght === 0) {
+    if(cart.length === 0) {
         return <h1>No se han agregado productos</h1>
     }
 

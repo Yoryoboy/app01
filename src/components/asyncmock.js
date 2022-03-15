@@ -26,7 +26,7 @@ const products = [
     description: 'Desc Ipad'},
 
     {id: 4, 
-    name: 'Gaming Desktop', 
+    name: 'gaming desktop', 
     price: 1200, 
     category: 'desktop', 
     img:'https://ssl-product-images.www8-hp.com/digmedialib/prodimg/lowres/c07762843.png', 
@@ -34,7 +34,7 @@ const products = [
     description: 'Desc Desktop'},
 
     {id: 5, 
-    name: 'Laptop', 
+    name: 'laptop', 
     price: 1200, 
     category: 'laptop', 
     img:'https://www.hp.com/us-en/shop/app/assets/images/product/2Y0V1AV_1/center_facing.png', 
